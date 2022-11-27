@@ -1,5 +1,7 @@
 Migrating Terraform State to Terraform Cloud
 
+![image](https://user-images.githubusercontent.com/93227818/204151922-155c9d72-f08b-45e4-8cb8-285e68806c2f.png)
+
 1. Set Up the Environment
 
 - In the terminal, once logged into your instance, change to the lab-migrate-state directory.
