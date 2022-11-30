@@ -9,7 +9,7 @@ terraform {
 
 # Configure the GitHub Provider
 provider "github" {
-	token = "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"
+	token = ""
 }
 
 resource "github_repository" "mili-terraform-test" {
