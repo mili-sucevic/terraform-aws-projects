@@ -1,8 +1,8 @@
 # Provider Block
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIA3Z2RFG2X3O57ZAXX"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 /*
