@@ -1,6 +1,12 @@
 # Provider Block
 provider "aws" {
+<<<<<<< HEAD
   region = "us-east-1"
+=======
+  region     = "us-east-1"
+  access_key = ""
+  secret_key = ""
+>>>>>>> a081d7c00bc7eb299465359ee0b9f0d70f839a15
 }
 
 # Resource Block
