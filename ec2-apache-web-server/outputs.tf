@@ -3,5 +3,5 @@ output "web_instance_ip" {
 }
 
 output "web_instance_url" {
-value = "web-app.cmcloudlab580.info"
+  value = "web-app.cmcloudlab469.info"
 }
