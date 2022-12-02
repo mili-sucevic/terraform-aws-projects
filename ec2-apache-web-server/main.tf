@@ -63,10 +63,19 @@ resource "aws_route_table_association" "public_rta" {
   route_table_id = aws_route_table.public_rt.id
 }
 
+# AWS EIP Association
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.web.id
+  allocation_id = aws_eip.eip_manager.id
+}
+resource "aws_eip" "eip_manager" {
+  vpc = true
+}
+
 # AWS Key Pair
 resource "aws_key_pair" "mili-keypair" {
   key_name   = "mili-keypair-webserver"
-  public_key = ""
+  public_key = var.mili_keypair
 }
 
 # EC2 Instance Definition
