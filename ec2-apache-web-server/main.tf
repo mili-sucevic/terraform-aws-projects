@@ -66,7 +66,7 @@ resource "aws_route_table_association" "public_rta" {
 # AWS Key Pair
 resource "aws_key_pair" "mili-keypair" {
   key_name   = "mili-keypair-webserver"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5J8M8DSMR37b37YyTCjcoKLaQPQzSsAMHN1Ol3YEJKQq9KsMXx8qua1d1MWuhr6tr+ILMP/mNnsvG90q8M6SWXavsCM6gLqSsGqCOkoYQRteR3/9VsSfkkTv1OtX37hQIsgkiWcf4C3vhfkANTokzRtOG0GG8dqMSPzbUdIEbSeGb1tMtLYFKhYgjO1Pp+mEGYrYIgBS8WX7yUW07oQVWy+smSmk8mkr6hiEacMMDuUgCea0mKRRKgZAltJiJ7Cd5sbFca+BvILQ6COSw1cYRCoFWM4Sj58ct3ClylX8PXrB9KfW1VtpqGdyKgngtZJ9shglce+ArhvDt9pHmTIB/ cloud_user@0fab1f18cc3c.mylabserver.com"
+  public_key = ""
 }
 
 # EC2 Instance Definition
@@ -85,16 +85,15 @@ resource "aws_instance" "web" {
   sudo systemctl start httpd
   sudo systemctl enable httpd
   echo "*** Completed Installing apache2"
-/*
+
   echo "*** Installing git"
-  sudo apt install git -y
-  sudo service git start
-  sudo service git enable
+  sudo yum install git -y
+  sudo systemctl start git
+  sudo systemctl enable git
   sudo touch /var/www/html
   sudo git clone https://bitbucket.org/dptrealtime/html-web-app/src/master/ 
   cd master
   sudo mv * /var/www/html 
-*/
   echo "*** Completed Installing git"
   EOF
 
