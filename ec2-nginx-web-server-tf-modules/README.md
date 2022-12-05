@@ -2,6 +2,9 @@
 
 In this project, we will be using Terraform as Iac to create a webserver which serves static website, which will be configured with Ansbile.
 
+![image](https://user-images.githubusercontent.com/93227818/205681689-74f223c1-5428-49ea-a996-20a29dcb78d9.png)
+
+
 Terraform create AWS resources:
 
 - VPC
