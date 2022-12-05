@@ -1,25 +1,28 @@
 # Static website Setup using Terraform and Ansible
 
-In this project, we are creating a instance with webserver which serves static website, setup with ansible.
+In this project, we will be using Terraform as Iac to create a webserver which serves static website, which will be configured with Ansbile.
 
-## Getting Started
+Terraform create AWS resources:
 
-First needs to run terraform with aws access key and secury key.
+- VPC
+- Internet_gateway
+- Subnet
+- Route table association
+- Security group
+- EC2 instance
+- S3 to save server state & save server state
 
-Terraform commands:
+Once the infrastructure is created run the ansible playbook for configuration management of the webserver
 
-terraform init
- 
-terraform plan
-
-terraform apply
-
-terraform destroy
-
-Then run ansible to provision webserver servers.
+Ansible deploy web-server:
+- Install Nginx
+- Copy config, index.html files
 
 Ansible command: ansible-playbook playbook.yml
-# IAC-terraform-Ansible-webapp
 
 Note : Change the iventory host IP with elastic IP of webhost
 
+References: 
+- https://github.com/MiteshSharma/TerraformAnsibleWebsite
+- https://medium.com/@mitesh_shamra/deploying-website-on-aws-using-terraform-and-ansible-f0251ae71f42
+- https://github.com/avgust-in/terraform-ansible-aws-nginx
