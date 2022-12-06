@@ -2,6 +2,8 @@
 
 Automate provisioning and configuration of NGINX server in Docker container with SSL certificate in AWS cloud using Jenkins, Ansible, Terraform.
 
+![image](https://user-images.githubusercontent.com/93227818/205864528-cb83384d-1114-4f1f-9658-98c2d139e487.png)
+
 ## Assumptions to complete this tutorial:
 - You have an AWS account set up and have IAM profiles on your local.
 - You have Jenkins installed and know how to basically use it
