@@ -1,8 +1,14 @@
 # AWS Security Groups
-resource "aws_security_group" "sg" {
+resource "aws_security_group" "sg-web" {
+  depends_on = [
+    aws_vpc.vpc,
+    aws_subnet.public_subnet,
+    aws_internet_gateway.igw
+  ]
+
   name        = "allow_ssh_http"
   description = "Allow ssh http inbound traffic"
-  vpc_id      = aws_vpc.apache_vpc.id
+  vpc_id      = aws_vpc.vpc.id
 
   ingress {
     description      = "SSH from VPC"
@@ -10,7 +16,6 @@ resource "aws_security_group" "sg" {
     to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
   }
 
   ingress {
@@ -19,7 +24,6 @@ resource "aws_security_group" "sg" {
     to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
   }
 
   egress {
@@ -27,7 +31,6 @@ resource "aws_security_group" "sg" {
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
   }
 
   tags = {

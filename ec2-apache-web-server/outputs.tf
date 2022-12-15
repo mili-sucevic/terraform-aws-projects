@@ -3,5 +3,5 @@ output "web_instance_ip" {
 }
 
 output "web_instance_url" {
-  value = "web-app.cmcloudlab469.info"
+  value = join(".", ["mili-web", data.aws_route53_zone.dns.name])
 }
